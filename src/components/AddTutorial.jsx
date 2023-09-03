@@ -1,10 +1,31 @@
-import { useState } from "react"
+import axios from "axios";
+import { useState } from "react";
 
-const AddTutorial = () => {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
+const AddTutorial = ({ getTutorials }) => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
-  const handleSubmit = (e) => {}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //* verileri post ile gönderebilmemiz için obje haline getirmemiz gerekir.
+    //* usestate deki veriler variables-degişken- olduğu için es-6 ile birlikte eğer key değişmeyecekse aynı isim olacaksa key:value şeklinde yazmak yerine sadece value yazmamız yeterli ve bir obje oluşmuş olacaktır.
+
+    const newTutorial = { title, description };
+    postTutorial(newTutorial);
+    setTitle("");
+    setDescription("");
+  };
+
+  const postTutorial = async (newTutorial) => {
+    const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials/";
+
+    try {
+      await axios.post(BASE_URL, newTutorial);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials()
+  };
 
   return (
     <div className="container text-center mt-4">
@@ -43,7 +64,7 @@ const AddTutorial = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default AddTutorial
+export default AddTutorial;
