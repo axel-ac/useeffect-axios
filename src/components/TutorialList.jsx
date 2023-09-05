@@ -1,6 +1,7 @@
 import { FaEdit } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
+import EditTutorial from "./EditTutorial";
 
 const TutorialList = ({ tutorials, getTutorials }) => {
   // const tutorials = [
@@ -66,6 +67,7 @@ const TutorialList = ({ tutorials, getTutorials }) => {
           })}
         </tbody>
       </table>
+      <EditTutorial />
     </div>
   );
 };
