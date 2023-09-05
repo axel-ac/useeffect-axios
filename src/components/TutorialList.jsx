@@ -39,6 +39,8 @@ const TutorialList = ({ tutorials, getTutorials }) => {
       getTutorials();
     };
 
+    console.log(editTutorial)
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
@@ -67,6 +69,13 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     className="me-2 text-warning"
                     data-bs-toggle="modal"
                     data-bs-target="#edit-tutor"
+                    // onClick={() =>
+                    //   editTutorial({
+                    //     id: 502,
+                    //     title: "dokanmayin",
+                    //     description: "REACT",
+                    //   })
+                    // }
                   />
                   <AiFillDelete
                     size={22}
