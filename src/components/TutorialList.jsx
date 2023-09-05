@@ -3,19 +3,20 @@ import { AiFillDelete } from "react-icons/ai";
 import axios from "axios";
 import EditTutorial from "./EditTutorial";
 
+// const tutorials = [
+//   {
+//     id: 1,
+//     title: "JS",
+//     description: "JS is a programming language",
+//   },
+//   {
+//     id: 2,
+//     title: "React",
+//     description: "JS library for UI design",
+//   },
+// ];
+
 const TutorialList = ({ tutorials, getTutorials }) => {
-  // const tutorials = [
-  //   {
-  //     id: 1,
-  //     title: "JS",
-  //     description: "JS is a programming language",
-  //   },
-  //   {
-  //     id: 2,
-  //     title: "React",
-  //     description: "JS library for UI design",
-  //   },
-  // ];
 
   const deleteTutorial = async (id) => {
     const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
@@ -64,6 +65,8 @@ const TutorialList = ({ tutorials, getTutorials }) => {
                     size={20}
                     type="button"
                     className="me-2 text-warning"
+                    data-bs-toggle="modal"
+                    data-bs-target="#edit-tutor"
                   />
                   <AiFillDelete
                     size={22}
