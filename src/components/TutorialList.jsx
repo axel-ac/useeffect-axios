@@ -28,6 +28,16 @@ const TutorialList = ({ tutorials, getTutorials }) => {
     getTutorials()
   };
 
+    const editTutorial = async ({ id, title, description }) => {
+      const BASE_URL = "https://tutorial-api.fullstack.clarusway.com/tutorials";
+      try {
+        await axios.put(`${BASE_URL}/${id}/`, { title, description });
+      } catch (error) {
+        console.log(error);
+      }
+      getTutorials();
+    };
+
   return (
     <div className="container mt-4">
       <table className="table table-striped">
