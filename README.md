@@ -31,6 +31,6 @@ The aim of this project; Learning to use UseEffect and Axios and using them effe
 https://useeffect-axios.netlify.app/
 ### At the end of the project, following topics are to be covered;
 - HTML
-- CSS
+- Bootstrap
 - JS
 - ReactJS
